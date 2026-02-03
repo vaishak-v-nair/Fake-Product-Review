@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VeriTrust Design System
+   Inspired by Linear/Superhuman - Clean, calm, premium
+   Primary: Teal/Cyan for trust
+   All colors in HSL
+*/
+
+@layer base {
+  :root {
+    /* Core palette */
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    /* Teal primary - trust & technology */
+    --primary: 175 70% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 175 60% 94%;
+    --primary-glow: 175 80% 45%;
+
+    /* Secondary - soft neutral */
+    --secondary: 210 15% 95%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 175 60% 92%;
+    --accent-foreground: 175 70% 25%;
+
+    /* Trust indicators */
+    --success: 150 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 90% 55%;
+    --warning-foreground: 35 90% 15%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 175 70% 35%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.3;
+    --shadow-soft: 0 4px 24px -4px hsl(220 25% 10% / 0.08);
+    --shadow-glow: 0 8px 40px -8px hsl(175 70% 35% / 0.2);
+    --gradient-hero: linear-gradient(135deg, hsl(175 60% 96%) 0%, hsl(210 40% 98%) 50%, hsl(280 40% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(175 20% 99%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(175 70% 35%) 0%, hsl(175 80% 45%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(175 70% 30%) 0%, hsl(190 70% 40%) 100%);
+
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 175 70% 35%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 175 70% 45%;
+    --primary-foreground: 220 25% 8%;
+    --primary-soft: 175 50% 15%;
+    --primary-glow: 175 80% 55%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 15% 85%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 210 15% 55%;
+
+    --accent: 175 40% 18%;
+    --accent-foreground: 175 60% 75%;
+
+    --success: 150 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 90% 50%;
+    --warning-foreground: 35 90% 10%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 175 70% 45%;
+
+    --glass-bg: 220 25% 12% / 0.8;
+    --glass-border: 0 0% 100% / 0.1;
+    --shadow-soft: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 8px 40px -8px hsl(175 70% 45% / 0.25);
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 10%) 0%, hsl(220 25% 8%) 50%, hsl(260 25% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 14%) 0%, hsl(220 25% 12%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(175 70% 40%) 0%, hsl(175 80% 50%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(175 70% 55%) 0%, hsl(190 70% 60%) 100%);
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 15% 85%;
+    --sidebar-primary: 175 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 210 15% 85%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 175 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/70 backdrop-blur-xl border border-white/20 shadow-soft;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-text);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-glow hover:shadow-xl transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border border-border hover:bg-muted transition-colors duration-200;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-tight {
+    @apply max-w-6xl mx-auto px-6 md:px-8;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

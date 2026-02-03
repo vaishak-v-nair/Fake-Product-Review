@@ -8,3 +8,8 @@ torch
 matplotlib
 seaborn
 tqdm
+fastapi
+uvicorn
+pydantic
+requests
+

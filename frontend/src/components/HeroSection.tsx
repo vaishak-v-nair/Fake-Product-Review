@@ -56,9 +56,13 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center pt-20 md:pt-24 pb-16"
-      style={{ background: "var(--gradient-hero)" }}
+      className="min-h-screen flex items-center pt-20 md:pt-24 pb-16 relative z-10"
     >
+      {/* Background gradient overlay */}
+      <div
+        className="absolute inset-0 z-1"
+        style={{ background: "var(--gradient-hero)" }}
+      />
       <div className="container-tight">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
