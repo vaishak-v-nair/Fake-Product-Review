@@ -44,7 +44,7 @@ const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container-tight flex items-center justify-between h-16 md:h-20">
+      <nav className="container-tight flex items-center justify-between h-16 md:h-20 px-4 md:px-6 lg:px-8">
         {/* Logo */}
         <motion.button
           onClick={() => scrollToSection("#home")}

@@ -129,7 +129,7 @@ const DemoSection = () => {
             <p className="text-sm text-muted-foreground mb-3">
               Try a sample review:
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
               {sampleReviews.map((sample, index) => (
                 <button
                   key={index}
@@ -156,7 +156,7 @@ const DemoSection = () => {
               placeholder="Paste a product review here..."
               className="w-full min-h-[160px] p-6 bg-transparent resize-none text-foreground placeholder:text-muted-foreground focus:outline-none text-base leading-relaxed"
             />
-            <div className="flex items-center justify-between px-6 py-4 bg-secondary/30 border-t border-border">
+            <div className="flex flex-col sm:flex-row items-center justify-between px-6 py-4 bg-secondary/30 border-t border-border gap-4">
               <span className="text-sm text-muted-foreground">
                 {reviewText.length} characters
               </span>
@@ -165,7 +165,7 @@ const DemoSection = () => {
                 whileTap={{ scale: 0.98 }}
                 onClick={analyzeReview}
                 disabled={!reviewText.trim() || isAnalyzing}
-                className="btn-primary px-6 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary px-6 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto justify-center"
               >
                 {isAnalyzing ? (
                   <>
@@ -228,10 +228,10 @@ const DemoSection = () => {
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: index * 0.1 }}
-                                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                                  className="flex items-start gap-2 text-sm text-muted-foreground"
                                 >
-                                  <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                                  {signal}
+                                  <span className="w-1.5 h-1.5 rounded-full bg-current mt-1 flex-shrink-0" />
+                                  <span className="break-words">{signal}</span>
                                 </motion.li>
                               ))}
                             </ul>

@@ -34,21 +34,21 @@ const HeroSection = () => {
       icon: BarChart3,
       title: "91% Accuracy",
       description: "Industry-leading detection rate",
-      className: "col-span-1 row-span-1",
+      className: "col-span-1",
       delay: 0.3,
     },
     {
       icon: Sparkles,
       title: "Explainable AI",
       description: "Understand why reviews are flagged",
-      className: "col-span-1 row-span-1",
+      className: "col-span-1",
       delay: 0.4,
     },
     {
       icon: Shield,
       title: "Trust Score",
       description: "Confidence ratings you can rely on",
-      className: "col-span-2 row-span-1 md:col-span-1",
+      className: "col-span-1",
       delay: 0.5,
     },
   ];
@@ -64,13 +64,13 @@ const HeroSection = () => {
         style={{ background: "var(--gradient-hero)" }}
       />
       <div className="container-tight">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column - Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
             <motion.div
               variants={itemVariants}
@@ -82,7 +82,7 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6"
             >
               Verify product reviews{" "}
               <span className="gradient-text">with confidence</span>
@@ -99,13 +99,13 @@ const HeroSection = () => {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto"
             >
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => scrollToSection("#demo")}
-                className="btn-primary px-8 py-4 rounded-xl font-semibold text-base flex items-center justify-center gap-2 group"
+                className="btn-primary px-8 py-4 rounded-xl font-semibold text-base flex items-center justify-center gap-2 group w-full sm:w-auto"
               >
                 Try live demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -114,7 +114,7 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => scrollToSection("#how-it-works")}
-                className="btn-secondary px-8 py-4 rounded-xl font-semibold text-base"
+                className="btn-secondary px-8 py-4 rounded-xl font-semibold text-base w-full sm:w-auto"
               >
                 How it works
               </motion.button>
@@ -126,7 +126,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 md:gap-5 order-1 lg:order-2"
           >
             {bentoCards.map((card, index) => (
               <motion.div
@@ -155,7 +155,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               whileHover={{ y: -4 }}
-              className="col-span-1 md:col-span-2 glass-card rounded-2xl p-6 md:p-7 relative overflow-hidden"
+              className="col-span-1 sm:col-span-2 lg:col-span-1 xl:col-span-2 glass-card rounded-2xl p-6 md:p-7 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-2xl" />
               <div className="relative">

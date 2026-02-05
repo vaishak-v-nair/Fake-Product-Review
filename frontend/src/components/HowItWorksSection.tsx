@@ -72,7 +72,7 @@ const HowItWorksSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-3 gap-6 md:gap-8 relative"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative"
         >
           {steps.map((step, index) => (
             <motion.div
